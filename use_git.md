@@ -32,4 +32,6 @@
 
 此后，每次本地提交后，只要有必要，就可以使用命令`git push origin master`推送最新修改；
 
+从远程抓取分支，使用`git pull`，如果有冲突，要先处理冲突。
+
 从远程库克隆`git clone git@server-name:path/repo-name.git`
