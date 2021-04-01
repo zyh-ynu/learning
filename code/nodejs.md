@@ -1,4 +1,10 @@
-基于Google的V8引擎， JavaScript服务端运行环境，事件驱动I/O [文档](https://nodejs.org/dist/latest-v14.x/docs/api/) [代码](https://github.com/nodejs/node) 
+### Node.js
+
+---
+
+基于Google的V8引擎， JavaScript服务端运行环境，事件驱动I/O 
+
+[文档](https://nodejs.org/zh-cn/docs/)   [代码](https://github.com/nodejs/node) 
 
 NPM 包管理工具
 
@@ -6,7 +12,7 @@ PM2 过程管理工具，用于监视项目，管理进程，pm2自己需要启�
 
 nodejs 单线程运行js代码，底层有封装线程池。每个进程启动独立的node服务，可以通过pm2方便管理
 
-**模块解析策略**
+##### 模块解析策略
 
 nodejs提供的模块，**原生模块**，**核心模块**。在nodejs源代码编译的时候就会被编译成二进制文件，nodejs启动时，这些核心模块就会直接被加载进内存，所以核心模块加载时，相对于文件模块，核心模块引用时不需要进行文件定位和动态编译，速度上有一定的优势。
 
@@ -27,6 +33,8 @@ nodejs提供的模块，**原生模块**，**核心模块**。在nodejs源代码
 1. 首先会在命中的目录下寻找package.json这个文件并用JSON.parse进行解析，取出json文件中main属性的值，作为命中的文件
 2. 如果找不到package.json或者对应的main属性，那么会用这个目录下面index文件作为命中文件，依旧是按照.js，.node，.json这个顺序逐个进行尝试
 3. 如果依旧找不到index，那么此次文件定位失败，将会按照上面提到的路径遍历规则，往上一级继续寻找
+
+[modules](https://nodejs.org/api/modules.html) 
 
 ```javascript
 /*文件/root/src/moduleA.js 模块解析*/

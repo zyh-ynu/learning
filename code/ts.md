@@ -1,18 +1,27 @@
-JavaScript 的一个超集，编译时静态类型检查
+### TypeScript
+
+---
+
+是JavaScript 的一个超集，在编译时执行静态类型检查，js是一种解释型脚本语言，一边编译一边执行
+
+[文档](https://www.typescriptlang.org/zh/docs/)   [代码](https://github.com/microsoft/TypeScript) 
+
+##### nodejs环境中使用ts
 
 1. 安装 node
 2. 使用淘宝源 `npm config set registry https://registry.npm.taobao.org`
 3. 安装typescript `npm install -g typescript`
+4. 通过tsc命令编译成js代码 `tsc --target es6 main.ts` 使用es6编译时加 `--target es6`
+5. 通过node命令执行js `node main.js` node基于v8引擎解析js代码
 
-ts代码先通过 tsc 命令编译成js代码，然后通过 node 命令在node.js环境中执行
+##### ts模块
 
-使用es6编译：`tsc --target es6 main.ts` `node main.js`
+ts任何包含顶级import或者export的文件都被当成一个模块。相反地，如果一个文件不带有顶级的import或者export声明，那么它的内容被视为**全局可见**的，因此对模块也是可见的，不需要显示导入。全局就是以`tsconfig.json`文件为根目录`baseUrl`的所有文件都能访问到。
 
-js是一种解释型脚本语言，一边编译一边执行，node基于v8引擎解析js代码
-
-**Tips**：ts任何包含顶级import或者export的文件都被当成一个模块。相反地，如果一个文件不带有顶级的import或者export声明，那么它的内容被视为**全局可见**的，因此对模块也是可见的，不需要显示导入。全局就是以`tsconfig.json`文件为根目录`baseUrl`的所有文件都能访问到。
+[tsconfig](https://www.typescriptlang.org/zh/tsconfig) 
 
 ```json
+/*tsconfig.json属性*/
 /*设置编译结果中使用的模块化标准*/
 "module": "commonjs",
 /*用于设置解析非相对模块名称的基本目录，相对模块不会受到baseUrl的影响*/
@@ -24,6 +33,8 @@ js是一种解释型脚本语言，一边编译一边执行，node基于v8引擎
 /*用于选择模块解析策略，有"node"和"classic"两种类型*/
 "moduleResolution": "node",
 ```
+
+[module resolution](https://www.typescriptlang.org/docs/handbook/module-resolution.html) 
 
 ```typescript
 /*文件/root/src/moduleA.ts 模块解析 非相对导入 node类型*/

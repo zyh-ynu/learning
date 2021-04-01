@@ -1,14 +1,20 @@
-protocol buffers 是一种序列化结构数据的方法，可用于（数据）通信协议、数据存储，类比 XML、JSON， [文档](https://developers.google.com/protocol-buffers/docs/overview) [代码](https://github.com/protocolbuffers/protobuf) 
+### Protocol Buffers
+
+---
+
+一种序列化结构数据的方法，可用于通信协议、数据存储，类比 XML、JSON
+
+ [文档](https://developers.google.com/protocol-buffers/docs/overview)   [代码](https://github.com/protocolbuffers/protobuf) 
 
 **特点**：语言无关，平台无关，高效，二进制编码，会使调试复杂化
 
-protobuf编译器
+##### protobuf编译器
 
-node.js库：protobufjs [代码](https://github.com/protobufjs/protobuf.js) 
+nodejs库：protobufjs [代码](https://github.com/protobufjs/protobuf.js) 
 
 c++库：
 
-**使用**：
+##### 使用
 
 1. **创建.proto文件，定义消息格式**
 
@@ -45,11 +51,7 @@ c++库：
    |   string    |       字符串必须始终包含 UTF-8 编码或 7 位 ASCII 文本        |  string  |   String   | str/unicode[4] | *string  |
    |    bytes    |                     可以包含任意字节序列                     |  string  | ByteString |      str       |  []byte  |
 
-   
-
 2. **编译 .proto 文件生成读写接口**
-
-   
 
 3. **调用接口实现序列化、反序列化以及读写消息**
 
