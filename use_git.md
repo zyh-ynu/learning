@@ -18,7 +18,7 @@
 
 **版本库**：.git隐藏目录，维护stage(暂存区)和master分支
 
-![git_repository](E:\repository\learning\image\git_repository.jpg)
+![git_repository](./image/git_repository.jpg)
 
 
 
