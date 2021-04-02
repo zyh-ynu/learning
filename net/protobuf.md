@@ -62,4 +62,4 @@ $> npm install protobufjs
 
 有效消息
 
-![protobufjs](..\image\protobufjs.svg)
+![protobufjs](../image/protobufjs.svg)
