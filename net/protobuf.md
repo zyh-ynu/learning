@@ -8,12 +8,6 @@
 
 **特点**：语言无关，平台无关，高效，二进制编码，会使调试复杂化
 
-##### protobuf编译器
-
-nodejs库：protobufjs [代码](https://github.com/protobufjs/protobuf.js) 
-
-c++库：
-
 ##### 使用
 
 1. **创建.proto文件，定义消息格式**
@@ -55,3 +49,17 @@ c++库：
 
 3. **调用接口实现序列化、反序列化以及读写消息**
 
+#### protobufjs
+
+纯JavaScript实现，支持Node.js和浏览器的TypeScript，容易使用速度快，可以直接反射`.proto`文件，不需要生成任何文件。解析.proto文件，构建Message类，编码解码。
+
+ [文档](https://protobufjs.github.io/protobuf.js/)   [代码](https://github.com/protobufjs/protobuf.js) 
+
+```sh
+# 安装
+$> npm install protobufjs
+```
+
+有效消息
+
+![protobufjs](..\image\protobufjs.svg)

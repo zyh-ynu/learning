@@ -6,13 +6,41 @@
 
 [文档](https://nodejs.org/zh-cn/docs/)   [代码](https://github.com/nodejs/node) 
 
-NPM 包管理工具
+#### NPM 包管理工具
 
-PM2 过程管理工具，用于监视项目，管理进程，pm2自己需要启动一个node服务
+```sh
+# 本地安装 命令行所在目录的node_module目录
+$ npm install xxx
+
+# 全局安装 默认在\AppData\Roaming\npm\node_modules下
+$ npm install xxx -g
+# 修改默认路径 全局包下载目录 缓存目录
+$ npm config set prefix "C:\node\node_global"
+$ npm config set cache "C:\node\node_cache"
+# 查看默认路径
+$ npm root -g
+$ npm config get cache
+
+# 安装并写入package.json的"dependencies"中 同-save
+$ npm install xxx –S 
+
+# 安装并写入package.json的"devDependencies"中 同-save-dev
+$ npm install xxx –D
+
+# 安装特定版本
+$ npm install xxx@1.0.0
+
+# 删除xxx模块
+$ npm uninstall xxx
+```
+
+#### PM2 
+
+Node 应用进程管理器，pm2自己需要启动一个node服务
 
 nodejs 单线程运行js代码，底层有封装线程池。每个进程启动独立的node服务，可以通过pm2方便管理
 
-##### 模块解析策略
+#### 模块解析策略
 
 nodejs提供的模块，**原生模块**，**核心模块**。在nodejs源代码编译的时候就会被编译成二进制文件，nodejs启动时，这些核心模块就会直接被加载进内存，所以核心模块加载时，相对于文件模块，核心模块引用时不需要进行文件定位和动态编译，速度上有一定的优势。
 

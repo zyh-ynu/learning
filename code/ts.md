@@ -8,11 +8,17 @@
 
 ##### nodejs环境中使用ts
 
-1. 安装 node
-2. 使用淘宝源 `npm config set registry https://registry.npm.taobao.org`
-3. 安装typescript `npm install -g typescript`
-4. 通过tsc命令编译成js代码 `tsc --target es6 main.ts` 使用es6编译时加 `--target es6`
-5. 通过node命令执行js `node main.js` node基于v8引擎解析js代码
+```sh
+# 安装 node
+# 使用淘宝源
+$ npm config set registry https://registry.npm.taobao.org
+# 安装typescript
+$ npm install -g typescript
+# 编译成js代码 使用es6编译时加 --target es6
+$ tsc --target es6 main.ts
+# 执行js
+$ node main.js
+```
 
 ##### ts模块
 
